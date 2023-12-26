@@ -1,0 +1,49 @@
+
+### Create new queue:
+POST http://localhost:3000/queue
+content-type: application/json
+
+{
+    "name": "myQueue"
+}
+
+### Add SMS message to myQueue
+POST http://localhost:3000/queue/name/myQueue/message
+content-type: application/json
+
+{
+    "platform": "SMS",
+    "message": "message 1",
+    "Recipients": ["0501111111"]
+}
+
+
+### Add SMS message to myQueue (With one invalid number)
+POST http://localhost:3000/queue/name/myQueue/message
+content-type: application/json
+
+{
+    "platform": "SMS",
+    "message": "Last number is not valid!",
+    "Recipients": ["0501111111","05022222"]
+}
+
+### Add Email task to queue (With one invalid mail)
+POST http://localhost:3000/queue/name/myQueue/message
+content-type: application/json
+
+{
+    "platform": "Email",
+    "subject": "I am the longest!",
+    "message": "Last mail is not valid!",
+    "Recipients": ["a@a.com","b@b.com","c@c.com","d@d.com", "e@e.com", "ff.com"]
+}
+
+### Execute messages from queue
+POST http://localhost:3000/queue/name/myQueue/execute
+content-type: application/json
+
+
+
+
+
