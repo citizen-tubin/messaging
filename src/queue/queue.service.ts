@@ -4,7 +4,6 @@ import { MessageDto } from "../message/dtos/message.dto";
 import { MessageService } from "../message/message.service";
 import { MessageSchema } from "../message/schemas/messageSchema";
 import { sortTasksByReceipients } from "./helpers/funcs";
-import { setUncaughtExceptionCaptureCallback } from "process";
 
 @Injectable()
 export class QueueService {

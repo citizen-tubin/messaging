@@ -7,6 +7,16 @@ content-type: application/json
     "name": "myQueue"
 }
 
+
+### Create another queue:
+
+POST http://localhost:3000/queue
+content-type: application/json
+
+{
+    "name": "myAnotherQueue"
+}
+
 ### Add SMS message to myQueue
 POST http://localhost:3000/queue/name/myQueue/message
 content-type: application/json
